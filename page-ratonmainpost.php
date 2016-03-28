@@ -1,24 +1,15 @@
 <?php get_header("raton"); ?>
 
-<div class="wrapper-background2015">
+<div class="wrapper-background2015" ng-controller="MainUserCtrl as mainCtrl">
 
     <div class="wrapper">
 
-        <div class="sidebar2015">
-
-            <div class="cat-title2015">
-                <div class="cat-icon2015">
-                    <i class="fa fa-list-ul"></i>
-                </div> <!-- .cat-icon2015 -->
-                <div class="cat-name2015">
-                    Categorie
-                </div> <!-- .cat-name2015 -->
-            </div>
-
+        <div class="sidebar2015" ng-controller="CategoryController as ctrl">
+            <ng-include src="mainCtrl.CONF.WP_SETTINGS.RATON_FE_URL + '/partial/category-view.html'"></ng-include>
         </div>
 
         <div class="corpo-centrale2015">
-
+            <div ng-view></div>
         </div>
 
     </div>

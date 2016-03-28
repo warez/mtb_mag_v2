@@ -29,30 +29,43 @@
     <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
     <![endif]-->
 
+    <script language="JavaScript">
+        var WP_API_Settings = {};
+
+        WP_API_Settings['root'] = "<?php echo esc_url_raw( rest_url() ) ?>";
+        WP_API_Settings['RATON_ROOT_URL'] = "<?php echo get_home_url() ?>";
+        WP_API_Settings['RATON_FE_URL'] = "/wp-content/plugins/raton/fe/user";
+        WP_API_Settings['nonce'] = "<?php echo wp_create_nonce( 'wp_rest' ) ?>";
+
+    </script>
+
 
     <script src="/wp-content/themes/mtb_mag_v2/js/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/wp-content/themes/mtb_mag_v2/js/bower_components/angular/angular.js"></script>
 
-    <script src="/wp-content/themes/mtb_mag_v2/js/bower_components/angular-animate/angular-animate.js"></script>
-    <script src="/wp-content/themes/mtb_mag_v2/js/bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="/wp-content/themes/mtb_mag_v2/js/bower_components/angular-resource/angular-resource.js"></script>
-    <script src="/wp-content/themes/mtb_mag_v2/js/bower_components/angular-route/angular-route.js"></script>
-    <script src="/wp-content/themes/mtb_mag_v2/js/bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="/wp-content/themes/mtb_mag_v2/js/bower_components/angular-touch/angular-touch.js"></script>
-
+    <script src="/wp-content/plugins/raton/fe/common/js/library/angular/angular.min.js"></script>
+    <script src="/wp-content/plugins/raton/fe/common/js/library/angular/angular-resource.min.js"></script>
+    <script src="/wp-content/plugins/raton/fe/common/js/library/angular/angular-route.min.js"></script>
+    <script src="/wp-content/plugins/raton/fe/common/js/library/angular/angular-animate.min.js"></script>
+    <script src="/wp-content/plugins/raton/fe/common/js/library/angular/angular-storage.js"></script>
     <script src="/wp-content/plugins/raton/fe/common/js/library/bootstrap/bootstrap.js"></script>
     <script src="/wp-content/plugins/raton/fe/common/js/library/bootstrap/ui-bootstrap-tpls-1.2.4.js"></script>
+    <script src="/wp-content/plugins/raton/fe/common/js/library/angular/angular-storage.js"></script>
     <script src="/wp-content/plugins/raton/fe/common/js/library/tree-repeat.js"></script>
+
+    <script src="/wp-content/plugins/raton/fe/common/js/raton-common-module.js"></script>
+    <script src="/wp-content/plugins/raton/fe/common/js/service/confService.js"></script>
+    <script src="/wp-content/plugins/raton/fe/common/js/service/loaderService.js"></script>
+    <script src="/wp-content/plugins/raton/fe/common/js/service/category/categoryService.js"></script>
+    <script src="/wp-content/plugins/raton/fe/common/js/service/category/categoryResource.js"></script>
+    <script src="/wp-content/plugins/raton/fe/common/js/service/category/categoryUtils.js"></script>
 
     <script src="/wp-content/plugins/raton/fe/user/js/raton-user-app.js"></script>
     <script src="/wp-content/plugins/raton/fe/user/js/controller/categoryCtrl.js"></script>
+    <script src="/wp-content/plugins/raton/fe/user/js/controller/mainUserCtrl.js"></script>
+    <script src="/wp-content/plugins/raton/fe/user/js/controller/homeCtrl.js"></script>
+    <script src="/wp-content/plugins/raton/fe/user/js/controller/insertionCtrl.js"></script>
     <script src="/wp-content/plugins/raton/fe/user/js/directive/categoryCmp.js"></script>
-    <script src="/wp-content/plugins/raton/fe/common/js/service/confService.js"></script>
-    <script src="/wp-content/plugins/raton/fe/common/js/service/loaderService.js"></script>
 
-    <link href='/wp-content/plugins/raton/fe/user/css/style2015.css' rel='stylesheet' type='text/css'>
-    <link href='/wp-content/plugins/raton/fe/user/css/raton.css' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
     <script>
         (function (i, s, o, g, r, a, m) {
@@ -73,6 +86,10 @@
     </script>
 
     <?php wp_head(); ?>
+
+    <link href='/wp-content/plugins/raton/fe/user/css/merc.css' rel='stylesheet' type='text/css'>
+    <link href='/wp-content/plugins/raton/fe/user/css/raton.css' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
@@ -106,7 +123,7 @@
 
 </head>
 
-<body <?php body_class(); ?> ng-app="ratonUserApp">
+<body <?php body_class(); ?> ng-app="JRatonUserApp">
 
 <div id="fb-root"></div>
 <script>(function (d, s, id) {
