@@ -32,6 +32,19 @@
     <script language="JavaScript">
         var WP_API_Settings = {};
 
+        <?php
+
+            $userMode = "GUEST";
+            if(is_user_logged_in()) {
+                if(is_super_admin())
+                    $userMode = "ADMIN";
+                else
+                    $userMode = "USER";
+            }
+
+        ?>
+
+        WP_API_Settings['userMode'] = "<?php echo $userMode ?>";
         WP_API_Settings['root'] = "<?php echo esc_url_raw( rest_url() ) ?>";
         WP_API_Settings['RATON_ROOT_URL'] = "<?php echo get_home_url() ?>";
         WP_API_Settings['RATON_FE_URL'] = "/wp-content/plugins/raton/fe/user";
@@ -55,15 +68,17 @@
     <script src="/wp-content/plugins/raton/fe/common/js/raton-common-module.js"></script>
     <script src="/wp-content/plugins/raton/fe/common/js/service/confService.js"></script>
     <script src="/wp-content/plugins/raton/fe/common/js/service/loaderService.js"></script>
-    <script src="/wp-content/plugins/raton/fe/common/js/service/category/categoryService.js"></script>
     <script src="/wp-content/plugins/raton/fe/common/js/service/category/categoryResource.js"></script>
+    <script src="/wp-content/plugins/raton/fe/common/js/service/category/categoryService.js"></script>
     <script src="/wp-content/plugins/raton/fe/common/js/service/category/categoryUtils.js"></script>
+    <script src="/wp-content/plugins/raton/fe/common/js/service/item/itemResource.js"></script>
+    <script src="/wp-content/plugins/raton/fe/common/js/service/item/itemService.js"></script>
 
     <script src="/wp-content/plugins/raton/fe/user/js/raton-user-app.js"></script>
     <script src="/wp-content/plugins/raton/fe/user/js/controller/categoryCtrl.js"></script>
     <script src="/wp-content/plugins/raton/fe/user/js/controller/mainUserCtrl.js"></script>
     <script src="/wp-content/plugins/raton/fe/user/js/controller/homeCtrl.js"></script>
-    <script src="/wp-content/plugins/raton/fe/user/js/controller/insertionCtrl.js"></script>
+    <script src="/wp-content/plugins/raton/fe/user/js/controller/itemCtrl.js"></script>
     <script src="/wp-content/plugins/raton/fe/user/js/directive/categoryCmp.js"></script>
 
 
