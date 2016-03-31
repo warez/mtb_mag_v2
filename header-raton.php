@@ -55,6 +55,8 @@
 
     <script src="/wp-content/themes/mtb_mag_v2/js/bower_components/jquery/dist/jquery.js"></script>
 
+    <script src="/wp-content/plugins/raton/fe/user/bootstrap/js/bootstrap.min.js"></script>
+
     <script src="/wp-content/plugins/raton/fe/common/js/library/angular/angular.min.js"></script>
     <script src="/wp-content/plugins/raton/fe/common/js/library/angular/angular-resource.min.js"></script>
     <script src="/wp-content/plugins/raton/fe/common/js/library/angular/angular-route.min.js"></script>
@@ -107,6 +109,8 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/wp-content/plugins/raton/fe/user/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/wp-content/plugins/raton/fe/user/bootstrap/css/bootstrap-theme.css">
 
     <!-- Facebook Pixel Code -->
     <script>
